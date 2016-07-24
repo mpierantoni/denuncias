@@ -22,3 +22,7 @@ Route::get('/denuncias', 'DenunciaController@index');
 Route::post('/denuncia', 'DenunciaController@store');
 
 Route::delete('/denuncia/{denuncia}', 'DenunciaController@destroy');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
