@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('denuncias');
+// });
+
+Route::get('/', 'DenunciaController@index');
+
+Route::get('/denuncias', 'DenunciaController@index');
+
+Route::post('/denuncia', 'DenunciaController@store');
+
+Route::delete('/denuncia/{denuncia}', 'DenunciaController@destroy');
