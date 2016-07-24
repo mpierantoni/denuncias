@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <!-- Bootstrap Boilerplate... -->
+<div class="container">
+    <div class="col-sm-offset-2 col-sm-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Nueva Denuncia
+            </div>
 
     <div class="panel-body">
         <!-- Display Validation Errors -->
@@ -31,6 +35,43 @@
             </div>
         </form>
     </div>
+  </div>
 
-    <!-- TODO: Current Denuncias -->
+        <!-- Denuncias existentes -->
+    @if (count($denuncias) > 0)
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Denuncias Existentes
+            </div>
+
+            <div class="panel-body">
+                <table class="table table-striped denuncia-table">
+
+                    <!-- Table Headings -->
+                    <thead>
+                        <th>Denuncia</th>
+                        <th>&nbsp;</th>
+                    </thead>
+
+                    <!-- Table Body -->
+                    <tbody>
+                        @foreach ($denuncias as $denuncia)
+                            <tr>
+                                <!-- Denuncia Name -->
+                                <td class="table-text">
+                                    <div>{{ $denuncia->name }}</div>
+                                </td>
+
+                                <td>
+                                    <!-- TODO: Delete Button -->
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    @endif
+  </div>
+</div>
 @endsection
