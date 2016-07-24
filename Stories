@@ -1,4 +1,8 @@
 Stories
 
 - Deploy del modulo localmente. 
-    Objetivo: Acceso al index del modulo utilizando Chrome.
+    Objetivo: Acceso al index del modulo utilizando Chrome. OK
+- Agregar creacion denuncia.
+    - crear vista: Acceso a vista en Chrome
+    - crear tabla: Tabla en DB
+    - crear controlador:
