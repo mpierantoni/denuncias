@@ -6,3 +6,5 @@ Stories
     - crear vista: Acceso a vista en Chrome
     - crear tabla: Tabla en DB
     - crear controlador:
+- Agregar listado de denuncias
+   obj: ver las denuncias existentes en index
