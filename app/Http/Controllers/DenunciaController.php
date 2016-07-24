@@ -52,4 +52,18 @@ class DenunciaController extends Controller
           'denuncias' => $denuncias,
       ]);
   }
+
+    /**
+   * Destroy the given denuncia.
+   *
+   * @param  Request  $request
+   * @param  Denuncia  $denuncia
+   * @return Response
+   */
+  public function destroy(Request $request, Denuncia $denuncia)
+  {
+      $denuncia->delete();
+
+      return redirect('/denuncias');
+  }
 }

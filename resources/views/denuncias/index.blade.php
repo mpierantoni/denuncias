@@ -25,11 +25,11 @@
                 </div>
             </div>
 
-            <!-- Add Denuncia Button -->
+            <!-- Tomar Denuncia Button -->
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-default">
-                        <i class="fa fa-plus"></i> Add Denuncia
+                        <i class="fa fa-plus"></i> Tomar Denuncia
                     </button>
                 </div>
             </div>
@@ -63,7 +63,14 @@
                                 </td>
 
                                 <td>
-                                    <!-- TODO: Delete Button -->
+                                    <form action="{{ url('denuncia/'.$denuncia->id) }}" method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+
+                                        <button type="submit" id="delete-denuncia-{{ $denuncia->id }}" class="btn btn-danger">
+                                            <i class="fa fa-btn fa-trash"></i>Delete
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
