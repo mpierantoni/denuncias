@@ -8,3 +8,8 @@ Stories
     - crear controlador:
 - Agregar listado de denuncias
    obj: ver las denuncias existentes en index
+- Borrar una denuncia
+   obj: boton borrar en el listado, eliminacion de la denuncia de la DB
+- Agregar autenticacion
+   obj: - forzar login cuando el usuario no esta autenticado
+        - mostrar opcion de logout cuando el usuario esta autenticado
