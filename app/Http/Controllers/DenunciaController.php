@@ -37,6 +37,8 @@ class DenunciaController extends Controller
       // Create denuncia...
 
       $denuncia->name = $request->name;
+      $denuncia->denunciante_dni = $request->denunciante_dni;
+      $denuncia->denunciante_nombres = $request->denunciante_nombres;
       $denuncia->id = $request->id;
       $denuncia->save();
 

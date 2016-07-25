@@ -25,6 +25,8 @@ Route::delete('/denuncia/{denuncia}', 'DenunciaController@destroy');
 
 Route::get('/denuncia/{denuncia}', 'DenunciaController@get');
 
+Route::get('/denuncia', 'DenunciaController@get');
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');

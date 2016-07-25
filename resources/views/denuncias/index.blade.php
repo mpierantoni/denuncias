@@ -13,17 +13,8 @@
         @include('common.errors')
 
         <!-- New Denuncia Form -->
-        <form action="{{ url('denuncia') }}" method="POST" class="form-horizontal">
+        <form action="{{ url('denuncia') }}" method="GET" class="form-horizontal">
             {{ csrf_field() }}
-
-            <!-- Denuncia Name -->
-            <div class="form-group">
-                <label for="denuncia-name" class="col-sm-3 control-label">Denuncia</label>
-
-                <div class="col-sm-6">
-                    <input type="text" name="name" id="denuncia-name" class="form-control">
-                </div>
-            </div>
 
             <!-- Tomar Denuncia Button -->
             <div class="form-group">
