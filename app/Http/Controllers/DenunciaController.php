@@ -16,7 +16,7 @@ class DenunciaController extends Controller
   }
 
   /**
-   * Create a new denuncia.
+   * Create/update a new denuncia.
    *
    * @param Request $request
    *
@@ -28,10 +28,16 @@ class DenunciaController extends Controller
           'name' => 'required|max:255',
       ]);
 
+      if ($request->id) {
+        $denuncia = Denuncia::find($request->id);
+      }else {
+        $denuncia = new Denuncia();
+      }
+
       // Create denuncia...
 
-      $denuncia = new Denuncia();
       $denuncia->name = $request->name;
+      $denuncia->id = $request->id;
       $denuncia->save();
 
       return redirect('/denuncias');
@@ -65,5 +71,19 @@ class DenunciaController extends Controller
       $denuncia->delete();
 
       return redirect('/denuncias');
+  }
+
+    /**
+   * Edit the given denuncia.
+   *
+   * @param  Request  $request
+   * @param  Denuncia  $denuncia
+   * @return Response
+   */
+  public function get(Request $request, Denuncia $denuncia)
+  {
+      return view('denuncias.denuncia', [
+          'denuncia' => $denuncia,
+      ]);
   }
 }

@@ -59,7 +59,11 @@
                             <tr>
                                 <!-- Denuncia Name -->
                                 <td class="table-text">
-                                    <div>{{ $denuncia->name }}</div>
+                                    <div>
+                                      <a href="{{ url('denuncia/'.$denuncia->id) }}">
+                                        {{ $denuncia->name }}
+                                      </a>
+                                    </div>
                                 </td>
 
                                 <td>
