@@ -17,4 +17,14 @@ Stories
     - nueva pantalla al cliquear en la lista que muestre los campos editables
     - boton grabar para salvar las modificaciones
     - redireccion a la lista luego de grabar
+- Agregar campos comunes a la denuncia
+    - datos denunciante y denunciado (cuando se conocieran):
+            - DNI, Nombre, Apellido, Domicilio completo, fecha de nacimiento, edad, 
+            Nacionalidad, telefono y correo electronico
+    - datos del hecho:
+            - calificacion legal, lugar del hecho(calle, altura, entre calles, barrio, localidad), fecha/s, horas/s
+    - datos del acto de toma de denuncia:
+            - fecha, hora, agente, organismo de recepcion, nro, preventivo/sumario (cuando es en sede policial)
+    - datos de la registracion de la denuncia en el sistema:
+            - fecha, hora, usuario y organismo
 
