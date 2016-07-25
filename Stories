@@ -29,5 +29,7 @@ Stories
             - fecha, hora, usuario y organismo
 - Mover creacion de denuncia a pantalla dedicada
     - el boton 'agregar denuncia' abre la pantalla de edicion/creacion
-- Agregar tipos de denuncia al modelo
-    - nuevas tablas en DB reflejando los tres tipos diferentes: persona en fiscalia, persona en sede y persona por escrito
+- Crear wizard para la creacion de una denuncia:
+    - el boton 'Tomar denuncia' debe guiar al usuario a traves de la creacion:
+        - tipo de carga: Fiscalia, Sede Policial, Por Escrito
+        - tipo de denuncia
