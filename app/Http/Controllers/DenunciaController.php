@@ -84,7 +84,7 @@ class DenunciaController extends Controller
    */
   public function get(Request $request, Denuncia $denuncia)
   {
-      return view('denuncias.denuncia', [
+      return view('denuncias.denuncia-wizard', [
           'denuncia' => $denuncia,
       ]);
   }

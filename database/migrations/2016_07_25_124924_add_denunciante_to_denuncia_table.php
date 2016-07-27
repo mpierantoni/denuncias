@@ -14,6 +14,8 @@ class AddDenuncianteToDenunciaTable extends Migration
     {
         Schema::table('denuncias', function (Blueprint $table) {
 
+          $table->string('forma');
+          $table->string('tipo');
           $table->string('denunciante_dni');
           $table->string('denunciante_nombres');
           $table->string('denunciante_apellidos');

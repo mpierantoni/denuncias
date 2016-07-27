@@ -13,7 +13,7 @@
         @include('common.errors')
 
         <!-- New Denuncia Form -->
-        <form action="{{ url('denuncia') }}" method="GET" class="form-horizontal">
+        <form action="{{ url('wizard') }}" method="GET" class="form-horizontal">
             {{ csrf_field() }}
 
             <!-- Tomar Denuncia Button -->

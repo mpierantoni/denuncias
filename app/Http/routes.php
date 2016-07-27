@@ -27,6 +27,12 @@ Route::get('/denuncia/{denuncia}', 'DenunciaController@get');
 
 Route::get('/denuncia', 'DenunciaController@get');
 
+Route::get('/wizard', function () {
+    return view('denuncias.denuncia-wizard');
+});
+
+Route::post('/wizardTomaTipo', 'WizardController@wizardTomaTipo');
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
