@@ -52,7 +52,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="./index.php" style="font-size: 25px;"><span>S</span>istema Judicial</a>
+						<a class="navbar-brand" href="./index.php" style="font-size: 25px;">Denuncias Beta</a>
 					</div>
 
 					<div class="navbar-collapse collapse navbar-gus-responsive-collapse">

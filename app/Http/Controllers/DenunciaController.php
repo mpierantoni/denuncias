@@ -25,7 +25,7 @@ class DenunciaController extends Controller
   public function store(Request $request)
   {
       $this->validate($request, [
-          'name' => 'required|max:255',
+          'denunciante_id' => 'required|max:255',
       ]);
 
       if ($request->id) {
@@ -36,10 +36,19 @@ class DenunciaController extends Controller
 
       // Create denuncia...
 
-      $denuncia->name = $request->name;
-      $denuncia->denunciante_dni = $request->denunciante_dni;
-      $denuncia->denunciante_nombres = $request->denunciante_nombres;
-      $denuncia->id = $request->id;
+      $denuncia->numero = $request->inputNumero;
+      $denuncia->forma = $request->recepcionForma;
+      $denuncia->tipo = $request->denunciaTipo;
+      $denuncia->denunciante_id = $request->denunciante_id;
+      $denuncia->denunciado_id = $request->denunciado_id;
+      $denuncia->hecho_calificacion_legal = $request->inputClasifLegal;
+      $denuncia->hecho_texto = $request->hechoTexto;
+//       $table->datetime ( 'acto_datetime' );
+//       $table->bigInteger ( 'acto_numero' );
+//       $denuncia->acto_agente' );
+//       $denuncia->acto_organismo' );
+// //       $denuncia->input_DNI_denunciante_ingreso = $request->input_DNI_denunciante_ingreso;
+//       $denuncia->input_nombres_denunciante_ingreso = $request->input_nombres_denunciante_ingreso;
       $denuncia->save();
 
       return redirect('/denuncias');
@@ -84,7 +93,7 @@ class DenunciaController extends Controller
    */
   public function get(Request $request, Denuncia $denuncia)
   {
-      return view('denuncias.denuncia-wizard', [
+      return view('denuncias.denuncia-form', [
           'denuncia' => $denuncia,
       ]);
   }

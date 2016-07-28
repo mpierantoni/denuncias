@@ -90,14 +90,15 @@
 
 		</div>
 		<!-- Fin Parte 0 -->
+		<form id="denuncia_form" action="{{ url('denuncia') }}" method="POST"
+			class="form-horizontal">
+			{{ csrf_field() }}
+			<div id="parte1" style="display: none;">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
 
-		<div id="parte1" style="display: none;">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-body">
-
-							<form class="form-horizontal">
 								<fieldset>
 									<legend>Por favor elija la forma de recepción de la denuncia</legend>
 
@@ -105,22 +106,23 @@
 
 										<div class="col-md-10">
 											<div class="radio radio-primary">
-												<label> <input type="radio" name="optionsRadios"
+												<label> <input type="radio" name="recepcionForma"
 													value="Persona en fiscalia"> Persona en fiscalia
 												</label>
 											</div>
 											<div class="radio radio-primary">
-												<label> <input type="radio" name="optionsRadios"
+												<label> <input type="radio" name="recepcionForma"
 													value="Persona en sede policial"> Persona en sede policial
 												</label>
 											</div>
 											<div class="radio radio-primary">
-												<label> <input type="radio" name="optionsRadios"
+												<label> <input type="radio" name="recepcionForma"
 													value="Persona por escrito"> Persona por escrito
 												</label>
 											</div>
 										</div>
 									</div>
+
 									<div class="form-group">
 										<div class="col-md-10 col-md-offset-2">
 											<button id="parte1-atras" type="button"
@@ -130,22 +132,19 @@
 										</div>
 									</div>
 								</fieldset>
-							</form>
 
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Fin Parte 1 -->
+			<!-- Fin Parte 1 -->
 
-		<div id="parte2" style="display: none;">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-body">
-
-							<form class="form-horizontal">
+			<div id="parte2" style="display: none;">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
 
 								<fieldset>
 									<legend>Por favor elija el tipo de denuncia</legend>
@@ -154,27 +153,27 @@
 
 										<div class="col-md-10">
 											<div class="radio radio-primary">
-												<label> <input type="radio" name="optionsRadios"
+												<label> <input type="radio" name="denunciaTipo"
 													value="Amenazas"> Amenazas
 												</label>
 											</div>
 											<div class="radio radio-primary">
-												<label> <input type="radio" name="optionsRadios"
+												<label> <input type="radio" name="denunciaTipo"
 													value="Robos/hurtos"> Robos/hurtos
 												</label>
 											</div>
 											<div class="radio radio-primary">
-												<label> <input type="radio" name="optionsRadios"
+												<label> <input type="radio" name="denunciaTipo"
 													value="Lesiones"> Lesiones
 												</label>
 											</div>
 											<div class="radio radio-primary">
-												<label> <input type="radio" name="optionsRadios"
+												<label> <input type="radio" name="denunciaTipo"
 													value="Impedimento de contacto"> Impedimento de contacto
 												</label>
 											</div>
 											<div class="radio radio-primary">
-												<label> <input type="radio" name="optionsRadios"
+												<label> <input type="radio" name="denunciaTipo"
 													value="Incumplimiento"> Incumplimiento
 												</label>
 											</div>
@@ -191,25 +190,23 @@
 									</div>
 								</fieldset>
 
-							</form>
 
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Fin Parte 2 -->
+			<!-- Fin Parte 2 -->
 
-		<div id="parte3" style="display: none;">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-body">
-
-							<form class="form-horizontal">
+			<div id="parte3" style="display: none;">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
 
 								<fieldset>
 									<legend>Datos del denunciante</legend>
+									<input id="denunciante_id" hidden="true" name="denunciante_id">
 
 									<div class="form-group" id="persona_busqueda">
 										<label for="input_DNI_denunciante"
@@ -241,7 +238,8 @@
 
 											<div class="col-md-10">
 												<input class="form-control"
-													id="input_nombres_denunciante_ingreso" placeholder="Nombres">
+													id="input_nombres_denunciante_ingreso"
+													placeholder="Nombres">
 											</div>
 										</div>
 
@@ -285,22 +283,19 @@
 										</div>
 									</div>
 								</fieldset>
-							</form>
 
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Fin Parte 3 -->
+			<!-- Fin Parte 3 -->
 
-		<div id="parte4" style="display: none;">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-body">
-
-							<form class="form-horizontal">
+			<div id="parte4" style="display: none;">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
 
 								<fieldset>
 									<legend>Datos del denunciado</legend>
@@ -346,22 +341,18 @@
 									</div>
 								</fieldset>
 
-							</form>
-
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Fin Parte 4 -->
+			<!-- Fin Parte 4 -->
 
-		<div id="parte5" style="display: none;">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-body">
-
-							<form class="form-horizontal">
+			<div id="parte5" style="display: none;">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
 
 								<fieldset>
 									<legend>Datos del hecho</legend>
@@ -371,7 +362,7 @@
 											legal</label>
 
 										<div class="col-md-10">
-											<input class="form-control" id="inputClasifLegal"
+											<input class="form-control" id="inputClasifLegal" name="inputClasifLegal"
 												placeholder="Clasificación Legal">
 										</div>
 									</div>
@@ -381,7 +372,7 @@
 										<label for="textArea" class="col-md-2 control-label">Hecho</label>
 
 										<div class="col-md-10">
-											<textarea class="form-control" rows="3" id="textArea"></textarea>
+											<textarea class="form-control" rows="3" id="textArea" name="hechoTexto"></textarea>
 											<span class="help-block">Ingrese una descripción completa del
 												hecho.</span>
 										</div>
@@ -397,23 +388,19 @@
 									</div>
 								</fieldset>
 
-							</form>
-
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Fin Parte 5 -->
+			<!-- Fin Parte 5 -->
 
 
-		<div id="parte6" style="display: none;">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-body">
-
-							<form class="form-horizontal">
+			<div id="parte6" style="display: none;">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
 
 								<fieldset>
 									<legend>Datos del hecho: Robo</legend>
@@ -439,23 +426,19 @@
 									</div>
 								</fieldset>
 
-							</form>
-
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Fin Parte 6 -->
+			<!-- Fin Parte 6 -->
 
 
-		<div id="parte7" style="display: none;">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-body">
-
-							<form class="form-horizontal">
+			<div id="parte7" style="display: none;">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
 
 								<fieldset>
 									<legend>Datos del acto de toma de denuncia</legend>
@@ -465,7 +448,7 @@
 										<label for="inputNumero" class="col-md-2 control-label">Número</label>
 
 										<div class="col-md-10">
-											<input class="form-control" id="inputNumero"
+											<input class="form-control" id="actoNumero" name="actoNumero"
 												placeholder="Número">
 										</div>
 									</div>
@@ -480,23 +463,19 @@
 									</div>
 								</fieldset>
 
-							</form>
-
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Fin Parte 7 -->
+			<!-- Fin Parte 7 -->
 
 
-		<div id="parte8" style="display: none;">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-body">
-
-							<form class="form-horizontal">
+			<div id="parte8" style="display: none;">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
 
 								<fieldset>
 									<legend>Datos de la registración de la denuncia en el sistema</legend>
@@ -506,7 +485,7 @@
 										<label for="inputFecha" class="col-md-2 control-label">Fecha</label>
 
 										<div class="col-md-10">
-											<input class="form-control" id="inputFecha"
+											<input class="form-control" id="registracionFecha" name="registracionFecha"
 												placeholder="Fecha">
 										</div>
 									</div>
@@ -528,17 +507,14 @@
 									</div>
 								</fieldset>
 
-							</form>
-
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Fin Parte 8 -->
-
+			<!-- Fin Parte 8 -->
+		</form>
 	</div>
-</div>
 </div>
 
 
@@ -579,6 +555,7 @@ $("#parte1").show();
 $('#parte1-siguiente').on('click', function() {
 $("#parte1").hide();
 $("#parte2").show();
+
 });
 
 $('#parte1-atras').on('click', function() {
@@ -653,7 +630,7 @@ $resumen = $resumen + '<p><b>Recepción denuncia: </b>' + $('input[name=optionsR
 $resumen = $resumen + '<p><b>Tipo de denuncia: </b>' + $('input[name=optionsRadios]:checked', '#form_radio_tipo_denuncia').val() + '</p>';
 
 $resumen = $resumen + '<p><b>DNI denunciante: </b>' + $('#input_DNI_denunciante_ingreso').val() + '</p>';
-$resumen = $resumen + '<p><b>Nombre denunciante: </b>' + $('#input_nombres_denunciante_ingreso').val() + '</p>';
+$resumen = $resumen + '<p><b>Nombres denunciante: </b>' + $('#input_nombres_denunciante_ingreso').val() + '</p>';
 
 
 $('#resumen_datos_cargados').html($resumen);
@@ -668,8 +645,8 @@ $("#parte7").hide();
 //En parte 8 del wizard
 $('#parte8-siguiente').on('click', function() {
 $("#parte8").hide();
-$("#parte0").show();
-
+// $("#parte0").show();
+$("#denuncia_form").submit()
 });
 
 $('#parte8-atras').on('click', function() {
@@ -683,6 +660,7 @@ $("#parte8").hide();
 $.ajaxSetup({
    headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
 });
+
 
 $("#buscar_denunciante").click(function(){
 
@@ -702,6 +680,7 @@ $("#buscar_denunciante").click(function(){
   					$('#input_nombres_denunciante_ingreso').focus();
     			}else{
                     $('#denunciante_form').find(':input').prop('disabled', true);
+  					$('#denunciante_id').val(persona.id);
   					$('#input_DNI_denunciante_ingreso').val(persona.dni);
     				$('#input_nombres_denunciante_ingreso').val(persona.nombres);    			                  
     			    }
@@ -714,5 +693,4 @@ $("#buscar_denunciante").click(function(){
 });
 
 </script>
-
 @endsection

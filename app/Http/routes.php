@@ -15,17 +15,11 @@ Route::auth();
 
 Route::get('/', 'DenunciaController@index');
 
-Route::get('/home', function () {
-  return redirect('/denuncias');
-});
+Route::get('/home', 'DenunciaController@index');
 
-Route::get('/index.php', function () {
-  return redirect('/denuncias');
-});
+Route::get('/index.php', 'DenunciaController@index');
 
-Route::get('/denuncias', function () {
-    return view('denuncias.denuncia-material');
-});
+Route::get('/denuncias', 'DenunciaController@index');
 
 Route::post('/denuncia', 'DenunciaController@store');
 
