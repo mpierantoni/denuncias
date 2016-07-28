@@ -11,13 +11,21 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('denuncias');
-// });
+Route::auth();
 
 Route::get('/', 'DenunciaController@index');
 
-Route::get('/denuncias', 'DenunciaController@index');
+Route::get('/home', function () {
+  return redirect('/denuncias');
+});
+
+Route::get('/index.php', function () {
+  return redirect('/denuncias');
+});
+
+Route::get('/denuncias', function () {
+    return view('denuncias.denuncia-material');
+});
 
 Route::post('/denuncia', 'DenunciaController@store');
 
@@ -27,12 +35,7 @@ Route::get('/denuncia/{denuncia}', 'DenunciaController@get');
 
 Route::get('/denuncia', 'DenunciaController@get');
 
-Route::get('/wizard', function () {
-    return view('denuncias.denuncia-wizard');
-});
+Route::post('/persona', 'PersonaController@store');
 
-Route::post('/wizardTomaTipo', 'WizardController@wizardTomaTipo');
+Route::get('/persona', 'PersonaController@get');
 
-Route::auth();
-
-Route::get('/home', 'HomeController@index');

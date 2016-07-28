@@ -1,0 +1,206 @@
+/*
+ *  *  * Base structure
+ *   *   */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+
+/*
+body {
+  padding-top: 50px;
+}*/
+
+
+/*
+ *  *  * Global add-ons
+ *   *   */
+
+/* 
+.sub-header {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ffffff;
+}
+*/
+
+/*
+ *  *  * Top navigation
+ *   *   * Hide default border to remove 1px line.
+ *    *    */
+/* 
+.navbar-fixed-top {
+	border: 0;
+}
+*/
+
+/*
+ *  *  * Sidebar
+ *   *   */
+
+/* Hide for mobile, show later */
+.sidebar {
+	/*display: none;*/
+	
+}
+
+/*The @media rule is used to define different style rules for different media types/devices.*/
+/*change the design when the width gets larger than 768px. This will make our design Mobile First:*/
+@media only screen and ( min-width : 768px) { /*768*/
+ /* For desktop: */
+	.sidebar {
+		position: fixed;
+		top: 38px;
+		bottom: 0;
+		left: 0;
+		z-index: 1000;/*1000*/
+		display: block;
+		padding: 20px;
+		overflow-x: hidden;
+		overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+		background-color: #f5f5f5;
+		background-color: #f0f0f0;
+		border-right: 1px solid #eee;
+	}
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+	margin-right: -41px; /* 20px padding + 1px border */
+	margin-bottom: 20px;
+	margin-left: -41px;
+}
+
+.nav-sidebar>li>a {
+	padding: 13px 16px;
+	color: #625e56;
+	font-size: 16px;
+}
+
+.nav-sidebar>li>a:hover {
+	color: #009688;
+	background-color: #d3d3d3;
+}
+
+.nav-sidebar>.active>a 
+/*, .nav-sidebar>.active>a:hover, .nav-sidebar>.active>a:focus*/
+	{ 
+	 color: #009688;
+	background-color:#c2c0bf;
+}
+
+/*
+ *  *  * Main content
+ *   *   */
+.main {
+	padding-top: 60px;
+}
+
+@media ( min-width : 768px) {
+	.main {
+		padding-right: 40px;
+		padding-left: 40px;
+	}
+}
+
+.main .page-header {
+	margin-top: 0;
+	border-bottom: 0;
+	/* 1 pxs solid blue; */
+}
+
+
+#test1 {
+	height: 200px !important;
+	width: 200px !important;
+	/*centrar horizontalmente: https://www.w3.org/Style/Examples/007/center.en.html*/
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+#test2 {
+	height: 200px !important;
+	width: 200px !important;
+	/*centrar horizontalmente: https://www.w3.org/Style/Examples/007/center.en.html*/
+	margin-left: auto;
+        margin-right: auto;
+}
+
+#test3 {
+        height: 200px !important;
+        width: 200px !important;
+        /*centrar horizontalmente: https://www.w3.org/Style/Examples/007/center.en.html*/
+        margin-left: auto;
+        margin-right: auto;
+}
+
+
+.info_carrera > a {
+    font-size: 20px; 
+}
+
+.info_carrera > a:link {
+    text-decoration: none;
+}
+
+.info_carrera > a:hover {
+    text-decoration: none;
+}
+
+
+.info_carrera > a:visited {
+    text-decoration: none;
+}
+
+.info_carrera > a:active {
+    text-decoration: none;
+}
+
+.info_carrera > a:after {
+    font-family:'Glyphicons Halflings';
+    content:"\e114";
+    float: right;
+    color: grey;
+}
+.info_carrera > a.collapsed:after {
+    content:"\e080";
+}
+
+
+
+
+.datatable {
+	cellpadding: 0;
+	cellspacing: 0;
+}
+
+.datatable th {
+	font-size: 12px; 
+}
+
+.datatable td {
+	font-size: 12px;
+	font-weight: 400; 
+}
+
+.datatable th div.dataTables_sizing {
+	font-size: 12px; 
+}
+/*Buscar la definicion en el chrome para redefinirla aca:*/
+
+div.dataTables_wrapper div.dataTables_length label{
+	font-size:12px;	
+}
+div.dataTables_wrapper div.dataTables_filter label{
+	font-size:12px;	
+		
+}
+div.dataTables_wrapper div.dataTables_length select{	
+	margin-left:  20px;
+	margin-right: 7px;
+}
+
+div.dataTables_wrapper div.dataTables_info{
+	font-size:12px;
+	font-weight: bold;
+}
+
+
+

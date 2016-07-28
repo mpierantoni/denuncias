@@ -16,9 +16,8 @@ class AddDenuncianteToDenunciaTable extends Migration
 
           $table->string('forma');
           $table->string('tipo');
-          $table->string('denunciante_dni');
-          $table->string('denunciante_nombres');
-          $table->string('denunciante_apellidos');
+          $table->string('denunciante_persona');
+          $table->string('denunciado_persona');
           $table->string('hecho_calificacion_legal');
           $table->longText('hecho_texto');
           $table->datetime('acto_datetime');

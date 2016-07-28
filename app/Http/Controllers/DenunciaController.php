@@ -16,7 +16,7 @@ class DenunciaController extends Controller
   }
 
   /**
-   * Create/update a new denuncia.
+   * Create/update una denuncia.
    *
    * @param Request $request
    *
@@ -56,7 +56,7 @@ class DenunciaController extends Controller
   {
       $denuncias = Denuncia::orderBy('created_at', 'asc')->get();
 
-      return view('denuncias.index', [
+      return view('denuncias.denuncia-material', [
           'denuncias' => $denuncias,
       ]);
   }
@@ -76,7 +76,7 @@ class DenunciaController extends Controller
   }
 
     /**
-   * Edit the given denuncia.
+   * get the given denuncia.
    *
    * @param  Request  $request
    * @param  Denuncia  $denuncia

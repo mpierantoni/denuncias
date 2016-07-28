@@ -9,13 +9,13 @@
 	  <div class="navbar-inner">
 	    <div class="container">
 	<ul>
-	  	<li><a href="#tab1" data-toggle="tab">Forma de Toma</a></li>
-		<li><a href="#tab2" data-toggle="tab">Tipo de Denuncia</a></li>
+	  	<li><a href="#tab1" data-toggle="tab">Forma</a></li>
+		<li><a href="#tab2" data-toggle="tab">Tipo</a></li>
 		<li><a href="#tab3" data-toggle="tab">Denunciante</a></li>
 		<li><a href="#tab4" data-toggle="tab">Denunciado</a></li>
-		<li><a href="#tab5" data-toggle="tab">Fifth</a></li>
-		<li><a href="#tab6" data-toggle="tab">Sixth</a></li>
-		<li><a href="#tab7" data-toggle="tab">Seventh</a></li>
+		<li><a href="#tab5" data-toggle="tab">Hechos</a></li>
+		<li><a href="#tab6" data-toggle="tab">Acto</a></li>
+		<li><a href="#tab7" data-toggle="tab">Finalización</a></li>
 	</ul>
 	 </div>
 	  </div>
@@ -58,7 +58,7 @@
           <div class="input-group">
             <input id="denunciante_dni" class="form-control col-md-7 col-xs-12">
             <span class="input-group-btn">
-                <button type="button" class="btn btn-primary">Go!</button>
+                <button id="dni_search" name="dni_search" type="button" class="btn btn-primary">Buscar</button>
             </span>
           </div>
       </div>
@@ -76,11 +76,11 @@
         </div>
 	  </div>
 		<div class="tab-pane" id="tab4">
-			4
-	    </div>
+			Idem denunciante
+	  </div>
 		<div class="tab-pane" id="tab5">
-			5
-	    </div>
+			Datos del Hecho
+	  </div>
 		<div class="tab-pane" id="tab6">
 			6
 	    </div>
@@ -140,15 +140,43 @@ $(document).ready(function() {
 				}
 			}
 
-			// Set the name for the next tab
-			$('#tab4').html('Hello, ' + $('#name').val());
-
 		}, onTabShow: function(tab, navigation, index) {
 			var $total = navigation.find('li').length;
 			var $current = index+1;
 			var $percent = ($current/$total) * 100;
 			$('#rootwizard .progress-bar').css({width:$percent+'%'});
 		}});
+});
+
+$("#dni_search").click(function(){
+
+  var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+  var data = new FormData();
+  data.append('_token', CSRF_TOKEN);
+  data.append("dni", $("#denunciante_dni").val());
+  // data.append("nombres", $("#denunciante_nombres").val());
+  // data.append("apellidos", $("#denunciante_apellidos").val());
+
+  $.ajax({
+    url: "./persona",
+    type: "get",
+    dataType: 'application/json',
+    processData: false,
+    contentType: false,
+    data: data,
+    success: function(data) {
+                console.log(data);
+                alert("El archivo fue subido correctamente.");
+              },
+    error: function(data) {
+                console.log(data);
+                  alert("Ocurrio un error, por favor intente de nuevo.");
+              }
+  });//ajax
+
+
+
+
 });
 </script>
 @endsection

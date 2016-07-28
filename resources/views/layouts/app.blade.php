@@ -1,86 +1,109 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap-wizard/1.2/jquery.bootstrap.wizard.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js" crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="Sysadmins">
+<meta name="author" content="Matias Pierantoni">
+<link rel="icon" href="./favicon.ico">
+<title>Denuncias</title>
+<!-- Bootstrap core CSS -->
+<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
-    <style>
-        body {
-            font-family: 'Lato';
-        }
+<!-- Material Design fonts -->
+<link rel="stylesheet"
+	href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+	type="text/css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!-- Bootstrap Material Design -->
+<link
+	href="./bootstrap-material-design-master/dist/css/bootstrap-material-design.css"
+	rel="stylesheet">
+<link href="./bootstrap-material-design-master/dist/css/ripples.min.css"
+	rel="stylesheet">
 
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
+<link href="./nvd3/build/nv.d3.min.css" rel="stylesheet">
+
+
+<link
+	href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css"
+	rel="stylesheet">
+
+
+<!-- Custom styles -->
+<link href="dashboard.css" rel="stylesheet">
 </head>
-<body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
 
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+<body>
 
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
-                </a>
-            </div>
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                </ul>
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
 
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-gus-responsive-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="./" style="font-size: 25px;"><span>S</span>istema
+					Judicial</a>
+			</div>
 
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
-                    @endif
-                </ul>
-            </div>
-        </div>
-    </nav>
+			<div class="navbar-collapse collapse navbar-gus-responsive-collapse">
+				<ul class="nav navbar-nav navbar-right">
 
-    @yield('content')
+
+
+					<!-- Right Side Of Navbar -->
+					<!-- Authentication Links -->
+					@if (Auth::guest())
+					<li><a href="{{ url('/login') }}">Login</a></li>
+					<li><a href="{{ url('/register') }}">Register</a></li> @else
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-expanded="false"> {{
+							Auth::user()->name }} <span class="caret"></span>
+					</a>
+
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="{{ url('/logout') }}"><i
+									class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+						</ul></li> @endif
+
+				</ul>
+			</div>
+
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+
+				<ul class="nav nav-sidebar navbar-collapse collapse"
+					role="navigation">
+					<li class=" withripple"><a href="{{ url('/home') }}"> <i
+							class="material-icons">home</i> Inicio
+					</a></li>
+					<li>
+					
+					<li class="active withripple"><a href="{{ url('/denuncias') }}"> <i
+							class="material-icons">report_problems</i> Denuncias
+					</a></li>
+
+					<li class=" withripple"><a href="{{ url('/home') }}"> <i
+							class="material-icons">help</i> Ayuda
+					</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+
+				@yield('content')
 
 </body>
 </html>
