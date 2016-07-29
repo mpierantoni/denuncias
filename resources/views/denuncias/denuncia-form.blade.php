@@ -39,8 +39,8 @@
 
 						<div class="col-md-10">
 							<div class="radio radio-primary">
-								<label> <input type="radio" name="denunciaTipo"
-									value="Amenazas"> Amenazas
+								<label> <input type="radio" name="denunciaTipo" value="Amenazas">
+									Amenazas
 								</label>
 							</div>
 							<div class="radio radio-primary">
@@ -49,8 +49,8 @@
 								</label>
 							</div>
 							<div class="radio radio-primary">
-								<label> <input type="radio" name="denunciaTipo"
-									value="Lesiones"> Lesiones
+								<label> <input type="radio" name="denunciaTipo" value="Lesiones">
+									Lesiones
 								</label>
 							</div>
 							<div class="radio radio-primary">
@@ -66,7 +66,15 @@
 						</div>
 					</div>
 
+					<div class="form-group">
+						<label for="actoFecha" class="col-md-2 control-label">Fecha</label>
 
+						<div class="col-md-10">
+							<input class="well" id="actoFecha" name="actoFecha"
+								placeholder="dd/mm/yyyy">
+						</div>
+					</div>
+					
 					<div class="form-group" id="persona_busqueda">
 						<label for="denunciante_id" class="col-md-2 control-label">DNI</label>
 

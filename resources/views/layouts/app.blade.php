@@ -31,11 +31,6 @@
 <link href="./nvd3/build/nv.d3.min.css" rel="stylesheet">
 
 
-<link
-	href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css"
-	rel="stylesheet">
-
-
 <!-- Custom styles -->
 <link href="dashboard.css" rel="stylesheet">
 </head>

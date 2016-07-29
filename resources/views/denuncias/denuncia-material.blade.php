@@ -300,36 +300,27 @@
 								<fieldset>
 									<legend>Datos del denunciado</legend>
 
-									<div class="form-group">
-										<label for="inputDNI" class="col-md-2 control-label">Ingrese
-											DNI del denunciado</label>
-
-										<div class="col-md-10">
-											<input class="form-control" id="inputDNI" placeholder="DNI">
-										</div>
-									</div>
-
-									<br> <br> <br>
-
 									<legend>En caso de no existir debera ingresar los datos</legend>
 
-									<div class="form-group">
-										<label for="inputDNI" class="col-md-2 control-label">DNI del
-											denunciado</label>
+									IDEM denunciante
+									
+<!-- 									<div class="form-group"> -->
+<!-- 										<label for="inputDNI" class="col-md-2 control-label">DNI del -->
+<!-- 											denunciado</label> -->
 
-										<div class="col-md-10">
-											<input class="form-control" id="inputDNI" placeholder="DNI">
-										</div>
-									</div>
+<!-- 										<div class="col-md-10"> -->
+<!-- 											<input class="form-control" id="inputDNI" placeholder="DNI"> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
 
-									<div class="form-group">
-										<label for="inputNombre" class="col-md-2 control-label">Nombre</label>
+<!-- 									<div class="form-group"> -->
+<!-- 										<label for="inputNombre" class="col-md-2 control-label">Nombre</label> -->
 
-										<div class="col-md-10">
-											<input class="form-control" id="inputNombre"
-												placeholder="Nombre">
-										</div>
-									</div>
+<!-- 										<div class="col-md-10"> -->
+<!-- 											<input class="form-control" id="inputNombre" -->
+<!-- 												placeholder="Nombre"> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
 
 									<div class="form-group">
 										<div class="col-md-10 col-md-offset-2">
@@ -362,8 +353,8 @@
 											legal</label>
 
 										<div class="col-md-10">
-											<input class="form-control" id="inputClasifLegal" name="inputClasifLegal"
-												placeholder="Clasificación Legal">
+											<input class="form-control" id="inputClasifLegal"
+												name="inputClasifLegal" placeholder="Clasificación Legal">
 										</div>
 									</div>
 
@@ -372,7 +363,8 @@
 										<label for="textArea" class="col-md-2 control-label">Hecho</label>
 
 										<div class="col-md-10">
-											<textarea class="form-control" rows="3" id="textArea" name="hechoTexto"></textarea>
+											<textarea class="form-control" rows="3" id="textArea"
+												name="hechoTexto"></textarea>
 											<span class="help-block">Ingrese una descripción completa del
 												hecho.</span>
 										</div>
@@ -445,11 +437,38 @@
 
 
 									<div class="form-group">
-										<label for="inputNumero" class="col-md-2 control-label">Número</label>
+										<label for="actoNumero" class="col-md-2 control-label">Número</label>
 
 										<div class="col-md-10">
 											<input class="form-control" id="actoNumero" name="actoNumero"
 												placeholder="Número">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="actoFecha" class="col-md-2 control-label">Fecha</label>
+
+										<div class="col-md-10">
+											<input class="well" id="actoFecha" name="actoFecha"
+												placeholder="dd/mm/yyyy">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="actoAgente" class="col-md-2 control-label">Agente</label>
+
+										<div class="col-md-10">
+											<input class="form-control" id="actoAgente" name="actoAgente"
+												placeholder="Nombre del Agente">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="actoOrganismo" class="col-md-2 control-label">Organismo</label>
+
+										<div class="col-md-10">
+											<input class="form-control" id="actoOrganismo"
+												name="actoOrganismo" placeholder="Nombre del Organismo">
 										</div>
 									</div>
 
@@ -485,8 +504,8 @@
 										<label for="inputFecha" class="col-md-2 control-label">Fecha</label>
 
 										<div class="col-md-10">
-											<input class="form-control" id="registracionFecha" name="registracionFecha"
-												placeholder="Fecha">
+											<input class="form-control" id="registracionFecha"
+												name="registracionFecha" placeholder="Fecha">
 										</div>
 									</div>
 
@@ -538,6 +557,17 @@
 <script src="./jquery-validation/dist/jquery.validate.min.js"></script>
 <!-- BAJAR -->
 <script src="./nvd3/build/nv.d3.min.js"></script>
+
+<!-- Para el datepicker -->
+<script src="./bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script
+	src="./bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js"></script>
+<link href="./bootstrap-datepicker/css/bootstrap-datepicker3.css"
+	rel="stylesheet">
+
+<link
+	href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css"
+	rel="stylesheet">
 
 
 <script type="text/javascript">
@@ -645,7 +675,7 @@ $("#parte7").hide();
 //En parte 8 del wizard
 $('#parte8-siguiente').on('click', function() {
 $("#parte8").hide();
-// $("#parte0").show();
+window.open('generar-pdf.php', '_blank');
 $("#denuncia_form").submit()
 });
 
@@ -692,5 +722,6 @@ $("#buscar_denunciante").click(function(){
   });
 });
 
+$('#actoFecha').datepicker({format: "dd/mm/yyyy"});
 </script>
 @endsection
