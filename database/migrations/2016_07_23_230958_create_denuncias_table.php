@@ -16,6 +16,7 @@ class CreateDenunciasTable extends Migration {
 			$table->string ( 'tipo' )->nullable ();
 			$table->string ( 'denunciante_id' )->nullable ();
 			$table->string ( 'denunciado_id' )->nullable ();
+			$table->datetime ( 'hecho_datetime' )->nullable ();
 			$table->string ( 'hecho_calificacion_legal' )->nullable ();
 			$table->longText ( 'hecho_texto' )->nullable ();
 			$table->datetime ( 'acto_datetime' )->nullable ();

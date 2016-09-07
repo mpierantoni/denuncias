@@ -29,7 +29,12 @@ Route::get('/denuncia/{denuncia}', 'DenunciaController@get');
 
 Route::get('/denuncia', 'DenunciaController@get');
 
+Route::get('/denuncia-nueva', function () {
+	return view ( '/denuncias/denuncia-material' );
+});
+
 Route::post('/persona', 'PersonaController@store');
 
 Route::get('/persona', 'PersonaController@get');
 
+Route::get ('/github', 'PdfController@github');

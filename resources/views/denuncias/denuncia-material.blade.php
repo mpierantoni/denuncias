@@ -13,87 +13,37 @@
 		</div>
 
 
-		<div id="parte0">
+<!-- 		<div id="parte0"> -->
 
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-body">
+<!-- 			<div class="row"> -->
+<!-- 				<div class="col-lg-12"> -->
+<!-- 					<div class="panel panel-default"> -->
+<!-- 						<div class="panel-body"> -->
 							<div class="table-responsive" style="border: none;">
-								<a href="javascript:void(0)" id="parte0-nueva-denuncia"
-									class="btn btn-raised btn-primary">Nueva denuncia</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+<!-- 								<a href="javascript:void(0)" id="parte0-nueva-denuncia" -->
+<!-- 									class="btn btn-raised btn-primary">Nueva denuncia</a> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
 
 
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<div class="table-responsive" style="border: none;">
+<!-- 			<div class="row"> -->
+<!-- 				<div class="col-lg-12"> -->
+<!-- 					<div class="panel panel-default"> -->
+<!-- 					</div> -->
 
-								<h2 style="text-align: center;">Denuncias recientes</h2>
-								<br> <br>
-								<table class="table table-hover">
-									<thead>
-										<tr>
-											<th>Número</th>
-											<th>Ingresada</th>
-											<th>Tipo</th>
-											<th>Localidad</th>
-											<th>Fecha</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr class="clickable-row" data-denunca="1">
-											<td>1</td>
-											<td>05/01/2016</td>
-											<td>Amenaza</td>
-											<td>Viedma</td>
-											<td>05/01/2016</td>
-										</tr>
-										<tr class="clickable-row" data-denunca="2">
-											<td>1</td>
-											<td>05/01/2016</td>
-											<td>Amenaza</td>
-											<td>Viedma</td>
-											<td>05/01/2016</td>
-										</tr>
-										<tr class="clickable-row" data-denunca="3">
-											<td>1</td>
-											<td>05/01/2016</td>
-											<td>Amenaza</td>
-											<td>Viedma</td>
-											<td>05/01/2016</td>
-										</tr>
-										<tr class="clickable-row" data-denunca="4">
-											<td>1</td>
-											<td>05/01/2016</td>
-											<td>Amenaza</td>
-											<td>Viedma</td>
-											<td>05/01/2016</td>
-										</tr>
-									</tbody>
-								</table>
+<!-- 				</div> -->
 
-							</div>
-						</div>
+<!-- 			</div> -->
 
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
+<!-- 		</div> -->
 		<!-- Fin Parte 0 -->
 		<form id="denuncia_form" action="{{ url('denuncia') }}" method="POST"
 			class="form-horizontal">
 			{{ csrf_field() }}
-			<div id="parte1" style="display: none;">
+			<div id="parte1" >
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="panel panel-default">
@@ -303,24 +253,24 @@
 									<legend>En caso de no existir debera ingresar los datos</legend>
 
 									IDEM denunciante
-									
-<!-- 									<div class="form-group"> -->
-<!-- 										<label for="inputDNI" class="col-md-2 control-label">DNI del -->
-<!-- 											denunciado</label> -->
 
-<!-- 										<div class="col-md-10"> -->
-<!-- 											<input class="form-control" id="inputDNI" placeholder="DNI"> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
+									<!-- 									<div class="form-group"> -->
+									<!-- 										<label for="inputDNI" class="col-md-2 control-label">DNI del -->
+									<!-- 											denunciado</label> -->
 
-<!-- 									<div class="form-group"> -->
-<!-- 										<label for="inputNombre" class="col-md-2 control-label">Nombre</label> -->
+									<!-- 										<div class="col-md-10"> -->
+									<!-- 											<input class="form-control" id="inputDNI" placeholder="DNI"> -->
+									<!-- 										</div> -->
+									<!-- 									</div> -->
 
-<!-- 										<div class="col-md-10"> -->
-<!-- 											<input class="form-control" id="inputNombre" -->
-<!-- 												placeholder="Nombre"> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
+									<!-- 									<div class="form-group"> -->
+									<!-- 										<label for="inputNombre" class="col-md-2 control-label">Nombre</label> -->
+
+									<!-- 										<div class="col-md-10"> -->
+									<!-- 											<input class="form-control" id="inputNombre" -->
+									<!-- 												placeholder="Nombre"> -->
+									<!-- 										</div> -->
+									<!-- 									</div> -->
 
 									<div class="form-group">
 										<div class="col-md-10 col-md-offset-2">
@@ -347,6 +297,15 @@
 
 								<fieldset>
 									<legend>Datos del hecho</legend>
+
+									<div class="form-group">
+										<label for="hechoFecha" class="col-md-2 control-label">Fecha</label>
+
+										<div class="col-md-10">
+											<input class="well" id="hechoFecha" name="hechoFecha"
+												placeholder="dd/mm/yyyy">
+										</div>
+									</div>
 
 									<div class="form-group">
 										<label for="inputClasifLegal" class="col-md-2 control-label">Calificación
@@ -575,11 +534,14 @@
     </script>
 <script type="text/javascript">
 
-//En parte 0 del wizard
-$('#parte0-nueva-denuncia').on('click', function() {
-$("#parte0").hide();
-$("#parte1").show();
-});
+$.ajaxSetup({
+	   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+	});
+// //En parte 0 del wizard
+// $('#parte0-nueva-denuncia').on('click', function() {
+// $("#parte0").hide();
+// $("#parte1").show();
+// });
 
 //En parte 1 del wizard
 $('#parte1-siguiente').on('click', function() {
@@ -588,10 +550,10 @@ $("#parte2").show();
 
 });
 
-$('#parte1-atras').on('click', function() {
-$("#parte0").show();
-$("#parte1").hide();
-});
+// $('#parte1-atras').on('click', function() {
+// $("#parte0").show();
+// $("#parte1").hide();
+// });
 
 //En parte 2 del wizard
 $('#parte2-siguiente').on('click', function() {
@@ -609,7 +571,44 @@ $("#parte2").hide();
 $('#parte3-siguiente').on('click', function() {
 $("#parte3").hide();
 $("#parte4").show();
-});
+	// get the form data
+	var formData = {
+	dni : $('#input_DNI_denunciante_ingreso').val(),
+	nombres : $('#input_nombres_denunciante_ingreso').val(),
+	apellidos : $('#input_apellidos_denunciante_ingreso').val()
+	};
+
+	// process the form
+	$.ajax({
+	type : 'post',
+	url : './persona',
+	data : formData,
+    processData: false,
+    contentType: "application/x-www-form-urlencoded",
+    encode: true,
+	})//ajax
+
+	// using the done promise callback
+	.done(function(data) {
+	// log data to the console
+	console.log(data);
+	// here we will handle errors and validation messages
+	alert('success');
+	if(data.success == true){
+	$exito = '<h4>La consulta se ha cargado exitosamente.</h4><br>';
+	}else{
+	$exito = '<h4>Ha habido un error al cargar la consulta.</h4><br>';
+	}
+	$exito = $exito + '<a class="btn btn-default col-sm-offset-4" href="./index.php?&op=4" role="button">Volver</a>';
+	$('#tab3').html($exito);
+
+
+	});//done
+	// stop the form from submitting the normal way and refreshing the page
+	event.preventDefault();
+	});//form
+// });//ready function
+
 
 $('#parte3-atras').on('click', function() {
 $("#parte2").show();
@@ -675,8 +674,8 @@ $("#parte7").hide();
 //En parte 8 del wizard
 $('#parte8-siguiente').on('click', function() {
 $("#parte8").hide();
-window.open('generar-pdf.php', '_blank');
-$("#denuncia_form").submit()
+// window.open('generar-pdf.php', '_blank');
+$("#denuncia_form")[0].submit();
 });
 
 $('#parte8-atras').on('click', function() {
@@ -687,9 +686,6 @@ $("#parte8").hide();
 
 
 //----------------------------------------------------------------------------------------------
-$.ajaxSetup({
-   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-});
 
 
 $("#buscar_denunciante").click(function(){
@@ -722,6 +718,37 @@ $("#buscar_denunciante").click(function(){
   });
 });
 
+$("#grabar_persona").click(function(){
+
+	  $.ajax({
+	    url: "./persona?dni="+$("#input_DNI_denunciante").val(),
+	    type: "post",
+	    dataType: 'application/json',
+	    processData: false,
+	    contentType: false,
+	    error: function(data) {
+	                var persona = $.parseJSON(data.responseText);
+	                if(data.responseText == '{}'){
+	                    alert('La persona no se encuentra en el sistema. Por favor ingrese los datos');
+	                    $('#denunciante_form').find(':input').val("");  					
+	    			    $('#denunciante_form').find(':input').prop('disabled', false);
+	  					$('#input_DNI_denunciante_ingreso').val($("#input_DNI_denunciante").val());
+	  					$('#input_nombres_denunciante_ingreso').focus();
+	    			}else{
+	                    $('#denunciante_form').find(':input').prop('disabled', true);
+	  					$('#denunciante_id').val(persona.id);
+	  					$('#input_DNI_denunciante_ingreso').val(persona.dni);
+	    				$('#input_nombres_denunciante_ingreso').val(persona.nombres);    			                  
+	    			    }
+	            },
+	    serror: function(data) {
+	                console.log(data);
+	                  alert("Ocurrio un error, por favor intente de nuevo.");
+	              }
+	  });
+});
+
 $('#actoFecha').datepicker({format: "dd/mm/yyyy"});
+$('#hechoFecha').datepicker({format: "dd/mm/yyyy"});
 </script>
 @endsection

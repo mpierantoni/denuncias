@@ -9,6 +9,7 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <meta name="description" content="Sysadmins">
 <meta name="author" content="Matias Pierantoni">
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 <link rel="icon" href="./favicon.ico">
 <title>Denuncias</title>
 <!-- Bootstrap core CSS -->
@@ -47,7 +48,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="./" style="font-size: 25px;"><span>S</span>istema
+				<a class="navbar-brand" href="{{ url('/home') }}" style="font-size: 25px;">Sistema
 					Judicial</a>
 			</div>
 
