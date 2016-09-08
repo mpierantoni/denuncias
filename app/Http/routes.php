@@ -25,16 +25,16 @@ Route::post('/denuncia', 'DenunciaController@store');
 
 Route::delete('/denuncia/{denuncia}', 'DenunciaController@destroy');
 
-Route::get('/denuncia/{denuncia}', 'DenunciaController@get');
-
 Route::get('/denuncia', 'DenunciaController@get');
 
 Route::get('/denuncia-nueva', function () {
 	return view ( '/denuncias/denuncia-material' );
 });
 
+Route::get('/template', 'DenunciaController@template');
+
 Route::post('/persona', 'PersonaController@store');
 
 Route::get('/persona', 'PersonaController@get');
 
-Route::get ('/github', 'PdfController@github');
+Route::get ('/pdf', 'PdfController@pdf');

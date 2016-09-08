@@ -4,6 +4,9 @@
         <title>Denuncias</title>
 
         <!-- CSS And JavaScript -->
+       	<script src="./jquery-2.2.0.min.js"></script>
+		<script src="./bootstrap/js/bootstrap.min.js"></script>
+        
     </head>
 
     <body>

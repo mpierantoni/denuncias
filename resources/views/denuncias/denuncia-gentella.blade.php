@@ -1,321 +1,300 @@
-@extends('layouts.app')
+@extends('layouts.app') @section('content')
+<head>
+<style type="text/css">
 
-@section('content')
-<div class="col-md-6 col-xs-12">
-    <div class="x_panel">
-      <div class="x_title">
-        <h2>Form Basic Elements <small>different form elements</small></h2>
-        <ul class="nav navbar-right panel_toolbox">
-          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Settings 1</a>
-              </li>
-              <li><a href="#">Settings 2</a>
-              </li>
-            </ul>
-          </li>
-          <li><a class="close-link"><i class="fa fa-close"></i></a>
-          </li>
-        </ul>
-        <div class="clearfix"></div>
-      </div>
-      <div class="x_content">
-        <br>
-        <form class="form-horizontal form-label-left">
+ol {
+	margin: 0;
+	padding: 0
+}
 
-          <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Default Input</label>
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <input type="text" class="form-control" placeholder="Default Input">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Disabled Input </label>
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <input type="text" class="form-control" disabled="disabled" placeholder="Disabled Input">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Read-Only Input</label>
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <input type="text" class="form-control" readonly="readonly" placeholder="Read-Only Input">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth <span class="required">*</span>
-            </label>
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <textarea class="form-control" rows="3" placeholder="rows=&quot;3&quot;"></textarea>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Password</label>
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <input type="password" class="form-control" value="passwordonetwo">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">AutoComplete</label>
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <input type="text" name="country" id="autocomplete-custom-append" class="form-control col-md-10" autocomplete="off">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Select</label>
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <select class="form-control">
-                <option>Choose option</option>
-                <option>Option one</option>
-                <option>Option two</option>
-                <option>Option three</option>
-                <option>Option four</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Custom</label>
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <select class="select2_single form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                <option></option>
-                <option value="AK">Alaska</option>
-                <option value="HI">Hawaii</option>
-                <option value="CA">California</option>
-                <option value="NV">Nevada</option>
-                <option value="OR">Oregon</option>
-                <option value="WA">Washington</option>
-                <option value="AZ">Arizona</option>
-                <option value="CO">Colorado</option>
-                <option value="ID">Idaho</option>
-                <option value="MT">Montana</option>
-                <option value="NE">Nebraska</option>
-                <option value="NM">New Mexico</option>
-                <option value="ND">North Dakota</option>
-                <option value="UT">Utah</option>
-                <option value="WY">Wyoming</option>
-                <option value="AR">Arkansas</option>
-                <option value="IL">Illinois</option>
-                <option value="IA">Iowa</option>
-                <option value="KS">Kansas</option>
-                <option value="KY">Kentucky</option>
-                <option value="LA">Louisiana</option>
-                <option value="MN">Minnesota</option>
-                <option value="MS">Mississippi</option>
-                <option value="MO">Missouri</option>
-                <option value="OK">Oklahoma</option>
-                <option value="SD">South Dakota</option>
-                <option value="TX">Texas</option>
-              </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 377px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-labelledby="select2-ite7-container"><span class="select2-selection__rendered" id="select2-ite7-container"><span class="select2-selection__placeholder">Select a state</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Grouped</label>
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <select class="select2_group form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                <optgroup label="Alaskan/Hawaiian Time Zone">
-                  <option value="AK">Alaska</option>
-                  <option value="HI">Hawaii</option>
-                </optgroup>
-                <optgroup label="Pacific Time Zone">
-                  <option value="CA">California</option>
-                  <option value="NV">Nevada</option>
-                  <option value="OR">Oregon</option>
-                  <option value="WA">Washington</option>
-                </optgroup>
-                <optgroup label="Mountain Time Zone">
-                  <option value="AZ">Arizona</option>
-                  <option value="CO">Colorado</option>
-                  <option value="ID">Idaho</option>
-                  <option value="MT">Montana</option>
-                  <option value="NE">Nebraska</option>
-                  <option value="NM">New Mexico</option>
-                  <option value="ND">North Dakota</option>
-                  <option value="UT">Utah</option>
-                  <option value="WY">Wyoming</option>
-                </optgroup>
-                <optgroup label="Central Time Zone">
-                  <option value="AL">Alabama</option>
-                  <option value="AR">Arkansas</option>
-                  <option value="IL">Illinois</option>
-                  <option value="IA">Iowa</option>
-                  <option value="KS">Kansas</option>
-                  <option value="KY">Kentucky</option>
-                  <option value="LA">Louisiana</option>
-                  <option value="MN">Minnesota</option>
-                  <option value="MS">Mississippi</option>
-                  <option value="MO">Missouri</option>
-                  <option value="OK">Oklahoma</option>
-                  <option value="SD">South Dakota</option>
-                  <option value="TX">Texas</option>
-                  <option value="TN">Tennessee</option>
-                  <option value="WI">Wisconsin</option>
-                </optgroup>
-                <optgroup label="Eastern Time Zone">
-                  <option value="CT">Connecticut</option>
-                  <option value="DE">Delaware</option>
-                  <option value="FL">Florida</option>
-                  <option value="GA">Georgia</option>
-                  <option value="IN">Indiana</option>
-                  <option value="ME">Maine</option>
-                  <option value="MD">Maryland</option>
-                  <option value="MA">Massachusetts</option>
-                  <option value="MI">Michigan</option>
-                  <option value="NH">New Hampshire</option>
-                  <option value="NJ">New Jersey</option>
-                  <option value="NY">New York</option>
-                  <option value="NC">North Carolina</option>
-                  <option value="OH">Ohio</option>
-                  <option value="PA">Pennsylvania</option>
-                  <option value="RI">Rhode Island</option>
-                  <option value="SC">South Carolina</option>
-                  <option value="VT">Vermont</option>
-                  <option value="VA">Virginia</option>
-                  <option value="WV">West Virginia</option>
-                </optgroup>
-              </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 377px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-nsui-container"><span class="select2-selection__rendered" id="select2-nsui-container" title="Alaska">Alaska</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Multiple</label>
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <select class="select2_multiple form-control select2-hidden-accessible" multiple="" tabindex="-1" aria-hidden="true">
-                <option>Choose option</option>
-                <option>Option one</option>
-                <option>Option two</option>
-                <option>Option three</option>
-                <option>Option four</option>
-                <option>Option five</option>
-                <option>Option six</option>
-              </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 377px;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1"><ul class="select2-selection__rendered"><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="With Max Selection limit 4" style="width: 375px;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-            </div>
-          </div>
+table td, table th {
+	padding: 0
+}
 
-          <div class="control-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Input Tags</label>
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <input id="tags_1" type="text" class="tags form-control" value="social, adverts, sales" data-tagsinput-init="true" style="display: none;"><div id="tags_1_tagsinput" class="tagsinput" style="width: auto; min-height: 100px; height: 100px;"><span class="tag"><span>social&nbsp;&nbsp;</span><a href="#" title="Removing tag">x</a></span><span class="tag"><span>adverts&nbsp;&nbsp;</span><a href="#" title="Removing tag">x</a></span><span class="tag"><span>sales&nbsp;&nbsp;</span><a href="#" title="Removing tag">x</a></span><div id="tags_1_addTag"><input id="tags_1_tag" value="" data-default="add a tag" style="color: rgb(102, 102, 102); width: 72px;"></div><div class="tags_clear"></div></div>
-              <div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-3 col-sm-3 col-xs-12 control-label">Checkboxes and radios
-              <br>
-              <small class="text-navy">Normal Bootstrap elements</small>
-            </label>
+.c0 {
+	font-size: 12pt;
+	font-family: "Verdana";
+	font-style: italic;
+	color: #000000;
+	font-weight: 700
+}
 
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value=""> Option one. select more than one options
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value=""> Option two. select more than one options
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios"> Option one. only select one option
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> Option two. only select one option
-                </label>
-              </div>
-            </div>
-          </div>
+.c9 {
+	font-size: 16pt;
+	font-family: "Arial";
+	font-style: italic;
+	color: #000000;
+	font-weight: 700
+}
 
-          <div class="form-group">
-            <label class="col-md-3 col-sm-3 col-xs-12 control-label">Checkboxes and radios
-              <br>
-              <small class="text-navy">Normal Bootstrap elements</small>
-            </label>
+.c4 {
+	font-size: 16pt;
+	font-family: "Verdana";
+	color: #000000;
+	font-weight: 400
+}
 
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <div class="checkbox">
-                <label>
-                  <div class="icheckbox_flat-green checked" style="position: relative;"><input type="checkbox" class="flat" checked="checked" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> Checked
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> Unchecked
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <div class="icheckbox_flat-green disabled" style="position: relative;"><input type="checkbox" class="flat" disabled="disabled" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> Disabled
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <div class="icheckbox_flat-green checked disabled" style="position: relative;"><input type="checkbox" class="flat" disabled="disabled" checked="checked" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> Disabled &amp; checked
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <div class="iradio_flat-green checked" style="position: relative;"><input type="radio" class="flat" checked="" name="iCheck" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> Checked
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <div class="iradio_flat-green" style="position: relative;"><input type="radio" class="flat" name="iCheck" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> Unchecked
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <div class="iradio_flat-green disabled" style="position: relative;"><input type="radio" class="flat" name="iCheck" disabled="disabled" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> Disabled
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <div class="iradio_flat-green checked disabled" style="position: relative;"><input type="radio" class="flat" name="iCheck3" disabled="disabled" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> Disabled &amp; Checked
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Switch</label>
-            <div class="col-md-9 col-sm-9 col-xs-12">
-              <div class="">
-                <label>
-                  <input type="checkbox" class="js-switch" checked="" style="display: none;" data-switchery="true"><span class="switchery switchery-default" style="border-color: rgb(38, 185, 154); box-shadow: rgb(38, 185, 154) 0px 0px 0px 11px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s; background-color: rgb(38, 185, 154);"><small style="left: 12px; transition: background-color 0.4s, left 0.2s; background-color: rgb(255, 255, 255);"></small></span> Checked
-                </label>
-              </div>
-              <div class="">
-                <label>
-                  <input type="checkbox" class="js-switch" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset; border-color: rgb(223, 223, 223); transition: border 0.4s, box-shadow 0.4s; background-color: rgb(255, 255, 255);"><small style="left: 0px; transition: background-color 0.4s, left 0.2s;"></small></span> Unchecked
-                </label>
-              </div>
-              <div class="">
-                <label>
-                  <input type="checkbox" class="js-switch" disabled="disabled" data-switchery="true" readonly="" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset; border-color: rgb(223, 223, 223); transition: border 0.4s, box-shadow 0.4s; opacity: 0.5; background-color: rgb(255, 255, 255);"><small style="left: 0px; transition: background-color 0.4s, left 0.2s;"></small></span> Disabled
-                </label>
-              </div>
-              <div class="">
-                <label>
-                  <input type="checkbox" class="js-switch" disabled="disabled" checked="checked" style="display: none;" data-switchery="true" readonly=""><span class="switchery switchery-default" style="border-color: rgb(38, 185, 154); box-shadow: rgb(38, 185, 154) 0px 0px 0px 11px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s; opacity: 0.5; background-color: rgb(38, 185, 154);"><small style="left: 12px; transition: background-color 0.4s, left 0.2s; background-color: rgb(255, 255, 255);"></small></span> Disabled Checked
-                </label>
-              </div>
-            </div>
-          </div>
+.c7 {
+	font-size: 12pt;
+	font-family: "Verdana";
+	color: #000000;
+	font-weight: 700
+}
 
+.c3 {
+	font-size: 12pt;
+	font-family: "Verdana";
+	color: #000000;
+	font-weight: 400
+}
 
-          <div class="ln_solid"></div>
-          <div class="form-group">
-            <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-              <button type="submit" class="btn btn-primary">Cancel</button>
-              <button type="submit" class="btn btn-success">Submit</button>
-            </div>
-          </div>
+.c6 {
+	background-color: #ffffff;
+	max-width: 439.4pt;
+	padding: 113.4pt 42.5pt 42.5pt 113.4pt
+}
 
-        </form>
-      </div>
-    </div>
-  </div>
+.c2 {
+	orphans: 2;
+	widows: 2;
+	text-align: justify
+}
+
+.c8 {
+	orphans: 2;
+	widows: 2
+}
+
+.c1 {
+	text-decoration: underline
+}
+
+.c5 {
+	height: 11pt
+}
+
+.title {
+	padding-top: 12pt;
+	color: #000000;
+	font-weight: 700;
+	font-size: 16pt;
+	padding-bottom: 3pt;
+	font-family: "Arial";
+	line-height: 1.5;
+	orphans: 2;
+	widows: 2;
+	text-align: center
+}
+
+.subtitle {
+	padding-top: 0pt;
+	color: #000000;
+	font-size: 11pt;
+	padding-bottom: 3pt;
+	font-family: "Arial";
+	line-height: 1.5;
+	orphans: 2;
+	widows: 2;
+	text-align: center
+}
+
+li {
+	color: #000000;
+	font-size: 11pt;
+	font-family: "Calibri"
+}
+
+p {
+	margin: 0;
+	color: #000000;
+	font-size: 11pt;
+	font-family: "Calibri"
+}
+
+h1 {
+	padding-top: 12pt;
+	color: #000000;
+	font-weight: 700;
+	font-size: 16pt;
+	padding-bottom: 3pt;
+	font-family: "Arial";
+	line-height: 1.5;
+	page-break-after: avoid;
+	orphans: 2;
+	widows: 2;
+	text-align: center
+}
+
+h2 {
+	padding-top: 12pt;
+	color: #000000;
+	font-weight: 700;
+	font-size: 14pt;
+	padding-bottom: 3pt;
+	font-family: "Arial";
+	line-height: 1.5;
+	page-break-after: avoid;
+	font-style: italic;
+	orphans: 2;
+	widows: 2;
+	text-align: center
+}
+
+h3 {
+	padding-top: 12pt;
+	color: #000000;
+	font-weight: 700;
+	font-size: 13pt;
+	padding-bottom: 3pt;
+	font-family: "Arial";
+	line-height: 1.5;
+	page-break-after: avoid;
+	orphans: 2;
+	widows: 2;
+	text-align: center
+}
+
+h4 {
+	padding-top: 12pt;
+	color: #000000;
+	font-weight: 700;
+	font-size: 14pt;
+	padding-bottom: 3pt;
+	font-family: "Calibri";
+	line-height: 1.5;
+	page-break-after: avoid;
+	orphans: 2;
+	widows: 2;
+	text-align: center
+}
+
+h5 {
+	padding-top: 12pt;
+	color: #000000;
+	font-weight: 700;
+	font-size: 13pt;
+	padding-bottom: 3pt;
+	font-family: "Calibri";
+	line-height: 1.5;
+	font-style: italic;
+	orphans: 2;
+	widows: 2;
+	text-align: center
+}
+
+h6 {
+	padding-top: 12pt;
+	color: #000000;
+	font-weight: 700;
+	font-size: 11pt;
+	padding-bottom: 3pt;
+	font-family: "Calibri";
+	line-height: 1.5;
+	orphans: 2;
+	widows: 2;
+	text-align: center
+}
+</style>
+</head>
+<div class="row main">
+	<p class="c8">
+		<span class="c0 c1">ACTA DENUNCIA - {{ $denuncia->tipo }}</span>
+	</p>
+	<p class="c2">
+		<span class="c0 c1">AUTOS: {{ $denuncia->id }}</span>
+	</p>
+	<p class="c2">
+		<span class="c0">EXPTE: {{ $denuncia->id }}
+	</p>
+	<p class="c2">
+		<span class="c4">???</span>
+	</p>
+	<p class="c2 c5">
+		<span class="c4"></span>
+	</p>
+	<p class="c2">
+		<span class="c7">ACTA DE DENUNCIA PENAL DE: {{ $denunciante->apellidos}}, {{ $denunciante->nombres }}</span>
+	</p>
+	<p class="c3">
+		    En la ciudad de
+			<span class="c7">{{ $denuncia->acto_localidad }}</span>,
+			 el 
+			<span class="c7">{{ date('d/m/Y', strtotime($denuncia->acto_datetime)) }}</span>,
+		     siendo las 
+			<span class="c7">{{ date('H:i:s', strtotime($denuncia->acto_datetime)) }}</span>
+		    hs, se presenta ante el Ministerio P&uacute;blico Fiscal de la Primera
+			Circunscripci&oacute;n Judicial, una persona que manifiesta el deseo
+			de formular una denuncia sobre un hecho que a su juicio est&aacute;
+			relacionado con un il&iacute;cito penal. Por lo que de conformidad a
+			lo dispuesto por el Art. 155 del C.P.P. se resuelve recibirla a
+			continuaci&oacute;n en legal forma. Impuesta que fue de las penas por
+			falsa denuncia de dos meses a un a&ntilde;o de prisi&oacute;n o multa
+			(Art. 245 del c&oacute;digo penal) jur&oacute; decir verdad de todo
+			cuanto declare. Preguntado por sus condiciones personales, dijo
+			llamarse:
+			<span class="c7">{{ $denunciante->apellidos}}, {{ $denunciante->nombres }}</span>;
+			D.N.I.
+			<span class="c7">{{ $denunciante->dni}}</span>;
+			que exhibe, domiciliado en
+			<span class="c7">{{ $denunciante->localidad }}</span>;
+			nacido en fecha 
+			<span class="c7">{{ date('d/m/Y', strtotime($denunciante->fecha_nacimiento)) }}</span>;
+			de 
+			<span class="c7">{{ date('Y',strtotime($denuncia->acto_datetime)) - date('Y', strtotime($denunciante->fecha_nacimiento))}}</span>
+			a&ntilde;os de edad, nacionalidad 
+			<span class="c7">{{ $denunciante->nacionalidad }}</span>;
+			tel&eacute;fono N&ordm;
+			<span class="c7">{{ $denunciante->telefono }}</span>;
+			Preguntada/o en relaci&oacute;n al motivo de su
+			comparendo, manifest&oacute; seguidamente que autores ignorados:</span>
+	</p>
+	<p class="c2 c5">
+		<span class="c3"></span>
+	</p>
+	<p class="c2">
+		<span class="c3 c1">FECHA Y HORA HECHO</span><span class="c3">:
+			Ocurri&oacute; el
+			<span class="c7">{{ $denuncia->hecho_datetime->format('d/m/Y') }}</span>
+			a las
+			<span class="c7">{{ $denuncia->hecho_datetime->format('H:i:s') }}</span> hs
+	</p>
+	<p class="c2">
+		<span class="c3 c1">LUGAR DEL HECHO</span><span class="c3">:CALLE: -
+			NRO.: - PISO: - DTO: - BARRIO: - ENTRE</span><span class="c3 c1">&nbsp;CALLE
+			Y CALLE</span><span class="c3">&nbsp;- LOCALIDAD: - C.P.: -
+			PROVINCIA: .</span>
+	</p>
+	<p class="c2">
+		<span class="c3">PREGUNTADO: si hubo fuerza en las cosas
+			CONTEST&Oacute;:</span>
+	</p>
+	<p class="c2">
+		<span class="c3">PREGUNTADO: si hubo violencia f&iacute;sica en las
+			personas CONTEST&Oacute;:</span>
+	</p>
+	<p class="c2">
+		<span class="c3">PREGUNTADO: valuaci&oacute;n de los elementos
+			sustra&iacute;dos CONTEST&Oacute;:</span>
+	</p>
+	<p class="c2">
+		<span class="c3">TESTIGOS:</span>
+	</p>
+	<p class="c2">
+		<span class="c3">Se adjunta en ANEXO 1 detalle de los elementos
+			sustra&iacute;dos</span>
+	</p>
+	<p class="c2">
+		<span class="c3">Seguidamente se le informa al compareciente sobre las
+			disposiciones de los Arts. 67, 74 sgtes y ccdtes del C.P.P., de lo
+			que se da por debidamente impuesto, entreg&aacute;ndosele en este
+			acto una foja con la transcripci&oacute;n de los art. referidos que
+			recibe de conformidad. Con lo cual y no siendo para m&aacute;s, se da
+			por finalizado el presente acto, previa lectura y ratificaci&oacute;n
+			que el compareciente hace por s&iacute;, firmando de conformidad
+			despu&eacute;s del Sr. Agente Fiscal.-</span>
+	</p>
+	<p class="c5 c8">
+		<span class="c3"></span>
+	</p>
 </div>
 @endsection

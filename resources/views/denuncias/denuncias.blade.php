@@ -48,36 +48,16 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr class="clickable-row" data-denunca="1">
-											<td>1</td>
-											<td>05/01/2016</td>
-											<td>Amenaza</td>
-											<td>Viedma</td>
-											<td>05/01/2016</td>
-										</tr>
 										@foreach ($denuncias as $denuncia)
-										<tr class="clickable-row" data-denunca="2">
+										<tr class="clickable-row" data-denunca="2"
+											data-url="{{ url('denuncia?id='.$denuncia->id) }}">
 											<td>{{ $denuncia->id }}</td>
 											<td>{{ date('d/m/Y', strtotime($denuncia->acto_datetime)) }}</td>
 											<td>{{ $denuncia->tipo }}</td>
-											<td>{{ $denuncia->acto_organismo }}</td>
+											<td>{{ $denuncia->hecho_localidad }}</td>
 											<td>{{ date('d/m/Y', strtotime($denuncia->hecho_datetime)) }}</td>
 										</tr>
 										@endforeach
-										<tr class="clickable-row" data-denunca="3">
-											<td>1</td>
-											<td>05/01/2016</td>
-											<td>Amenaza</td>
-											<td>Viedma</td>
-											<td>05/01/2016</td>
-										</tr>
-										<tr class="clickable-row" data-denunca="4">
-											<td>1</td>
-											<td>05/01/2016</td>
-											<td>Amenaza</td>
-											<td>Viedma</td>
-											<td>05/01/2016</td>
-										</tr>
 									</tbody>
 								</table>
 
@@ -91,4 +71,15 @@
 			</div>
 
 		</div>
-		@endsection
+	</div>
+</div>
+<script src="./jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+
+$(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("url");
+    });
+});
+</script>
+@endsection
