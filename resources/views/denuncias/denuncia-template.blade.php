@@ -1,4 +1,3 @@
-@extends('layouts.app') @section('content')
 <head>
 <style type="text/css">
 
@@ -96,12 +95,6 @@ table td, table th {
 	orphans: 2;
 	widows: 2;
 	text-align: center
-}
-
-li {
-	color: #000000;
-	font-size: 11pt;
-	font-family: "Calibri"
 }
 
 p {
@@ -297,4 +290,3 @@ h6 {
 		<span class="c3"></span>
 	</p>
 </div>
-@endsection

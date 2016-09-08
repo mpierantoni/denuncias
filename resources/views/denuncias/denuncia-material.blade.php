@@ -13,37 +13,11 @@
 		</div>
 
 
-		<!-- 		<div id="parte0"> -->
-
-		<!-- 			<div class="row"> -->
-		<!-- 				<div class="col-lg-12"> -->
-		<!-- 					<div class="panel panel-default"> -->
-		<!-- 						<div class="panel-body"> -->
 		<div class="table-responsive" style="border: none;">
-			<!-- 								<a href="javascript:void(0)" id="parte0-nueva-denuncia" -->
-			<!-- 									class="btn btn-raised btn-primary">Nueva denuncia</a> -->
-			<!-- 							</div> -->
-			<!-- 						</div> -->
-			<!-- 					</div> -->
-			<!-- 				</div> -->
-			<!-- 			</div> -->
-
-
-			<!-- 			<div class="row"> -->
-			<!-- 				<div class="col-lg-12"> -->
-			<!-- 					<div class="panel panel-default"> -->
-			<!-- 					</div> -->
-
-			<!-- 				</div> -->
-
-			<!-- 			</div> -->
-
-			<!-- 		</div> -->
-			<!-- Fin Parte 0 -->
 			<form id="denuncia_form" action="{{ url('denuncia') }}" method="POST"
 				class="form-horizontal">
 				{{ csrf_field() }}
-				<div id="parte1">
+				<div id="parte1" style="display: none;">
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="panel panel-default">
@@ -189,7 +163,7 @@
 												<div class="col-md-10">
 													<input class="form-control"
 														id="input_nombres_denunciante_ingreso"
-														placeholder="Nombres">
+														placeholder="Nombres" required="required">
 												</div>
 											</div>
 
@@ -199,7 +173,7 @@
 												<div class="col-md-10">
 													<input class="form-control"
 														id="input_apellidos_denunciante_ingreso"
-														placeholder="Apellidos">
+														placeholder="Apellidos" required="required">
 												</div>
 											</div>
 
@@ -209,7 +183,7 @@
 												<div class="col-md-10">
 													<input class="form-control"
 														id="input_nacionalidad_denunciante_ingreso"
-														placeholder="Nacionalidad">
+														placeholder="Nacionalidad" required="required">
 												</div>
 											</div>
 
@@ -219,7 +193,7 @@
 
 												<div class="col-md-10">
 													<input class="well" id="nacimientoDenuncianteFecha"
-														name="nacimientoDenuncianteFecha" placeholder="dd/mm/yyyy">
+														name="nacimientoDenuncianteFecha" placeholder="dd/mm/yyyy" required="required">
 												</div>
 											</div>
 
@@ -358,7 +332,7 @@
 				<!-- Fin Parte 5 -->
 
 
-				<div id="parte6" style="display: none;">
+				<div id="parte6" >
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="panel panel-default">
@@ -367,14 +341,15 @@
 									<fieldset>
 										<legend>Datos del hecho: Robo</legend>
 
-
 										<div class="form-group">
-											<label for="textArea" class="col-md-2 control-label">Robo</label>
-
-											<div class="col-md-10">
-												<textarea class="form-control" rows="3" id="textArea"></textarea>
-												<span class="help-block">Ingrese una descripción completa
-													del robo.</span>
+											<div class="col-md-10 col-md-offset-2">
+												<select class="form-control valid"
+													id="select_objeto_robado" aria-invalid="false">
+													<option value="Auto">Auto</option>
+													<option value="Moto">Moto</option>
+													<option value="Bici">Bici</option>
+													<option value="Perro">Perro</option>
+												</select>
 											</div>
 										</div>
 
@@ -476,21 +451,10 @@
 								<div class="panel-body">
 
 									<fieldset>
-										<legend>Datos de la registración de la denuncia en el sistema</legend>
+										<legend>Confirme los datos ingresados para generar la denuncia</legend>
 
-
-										<div class="form-group">
-											<label for="inputFecha" class="col-md-2 control-label">Fecha</label>
-
-											<div class="col-md-10">
-												<input class="form-control" id="registracionFecha"
-													name="registracionFecha" placeholder="Fecha">
-											</div>
-										</div>
 
 										<br> <br>
-
-										<legend>Resumen de los datos ingresados</legend>
 
 										<!-- Para mostrar un resumen de los datos cargados con jquery-->
 										<div id="resumen_datos_cargados"></div>
@@ -514,44 +478,14 @@
 			</form>
 		</div>
 	</div>
-
-	<script src="./jquery-2.2.0.min.js"></script>
-	<script src="./bootstrap/js/bootstrap.min.js"></script>
-	<script src="./bootstrap-material-design-master/dist/js/ripples.min.js"></script>
-	<script
-		src="./bootstrap-material-design-master/dist/js/material.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"
-		charset="utf-8"></script>
-	<script
-		src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
-	<script
-		src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
-	<!-- Wizard -->
-	<script src="./twitter-bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
-	<script src="./jquery-validation/dist/jquery.validate.min.js"></script>
-	<!-- BAJAR -->
-	<script src="./nvd3/build/nv.d3.min.js"></script>
-
-	<!-- Para el datepicker -->
-	<script src="./bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-	<script
-		src="./bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js"></script>
-	<link href="./bootstrap-datepicker/css/bootstrap-datepicker3.css"
-		rel="stylesheet">
-
-	<link
-		href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css"
-		rel="stylesheet">
+</div>
 
 
-	<script type="text/javascript">
-      $.material.init();
-    </script>
-	<script type="text/javascript">
 
-$.ajaxSetup({
-	   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-	});
+<script type="text/javascript">
+$.material.init();
+
+$.ajaxSetup({ headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }});
 
 //En parte 1 del wizard
 $('#parte1-siguiente').on('click', function() {
@@ -604,6 +538,7 @@ $('#parte3-siguiente').on('click', function() {
 
 			console.log(data);
 			$('#denunciante_id').val(data.id);
+            $('#denunciante_form').find(':input').prop('disabled', true);
 			alert('Denunciante agregado al sistema: ' + data.dni)
     	},
     error: function(data){
@@ -728,8 +663,37 @@ $("#buscar_denunciante").click(function(){
   });
 });
 
+// -------- Validator
+
+      // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
+      $('form')
+        .on('blur', 'input[required], input.optional, select.required', validator.checkField)
+        .on('change', 'select.required', validator.checkField)
+        .on('keypress', 'input[required][pattern]', validator.keypress);
+
+      $('.multi.required').on('keyup blur', 'input', function() {
+        validator.checkField.apply($(this).siblings().last()[0]);
+      });
+
+      
+
+//       $('form').submit(function(e) {
+//         e.preventDefault();
+//         var submit = true;
+
+//         // evaluate the form using generic validaing
+//         if (!validator.checkAll($(this))) {
+//           submit = false;
+//         }
+
+//         if (submit)
+//           this.submit();
+
+//         return false;
+//       });
+    
 $('#actoFecha').datepicker({format: "dd/mm/yyyy"});
 $('#hechoFecha').datepicker({format: "dd/mm/yyyy"});
 $('#nacimientoDenuncianteFecha').datepicker({format: "dd/mm/yyyy"});
 </script>
-	@endsection
+@endsection

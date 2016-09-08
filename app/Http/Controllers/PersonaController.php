@@ -56,6 +56,10 @@ class PersonaController extends Controller {
 
 		$dni = $request->dni;
 		$persona = DB::table ( 'personas' )->where ('dni',$dni)->first ();
+		
+		//------------
+		// Si persona es null llamar a servicio externo desde aca
+		//------------
 		return Response::json ( $persona );
 	}
 }

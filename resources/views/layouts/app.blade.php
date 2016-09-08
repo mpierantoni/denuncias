@@ -12,24 +12,39 @@
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 <link rel="icon" href="./favicon.ico">
 <title>Denuncias</title>
+
+<script src="./jquery-2.2.0.min.js"></script>
+
 <!-- Bootstrap core CSS -->
 <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"	charset="utf-8"></script>
+<script	src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+<script	src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
 
+<!-- Wizard -->
+<script src="./twitter-bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
+<script src="./jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="./nvd3/build/nv.d3.min.js"></script>
+
+<!-- Para el datepicker -->
+<script src="./bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script	src="./bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css" rel="stylesheet">
 
 <!-- Material Design fonts -->
-<link rel="stylesheet"
-	href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
-	type="text/css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<!-- Bootstrap Material Design -->
-<link
-	href="./bootstrap-material-design-master/dist/css/bootstrap-material-design.css"
-	rel="stylesheet">
-<link href="./bootstrap-material-design-master/dist/css/ripples.min.css"
-	rel="stylesheet">
+<link rel="stylesheet"	href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<!-- Bootstrap Material Design -->
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+<script src="./bootstrap-material-design-master/dist/js/ripples.min.js"></script>
+<script src="./bootstrap-material-design-master/dist/js/material.min.js"></script>
+<link href="./bootstrap-material-design-master/dist/css/bootstrap-material-design.css" rel="stylesheet">
+<link href="./bootstrap-material-design-master/dist/css/ripples.min.css" rel="stylesheet">
 <link href="./nvd3/build/nv.d3.min.css" rel="stylesheet">
+<link href="./bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet">
+
+<script src="./validator/validator.min.js"></script>
 
 
 <!-- Custom styles -->
